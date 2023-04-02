@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-
+import userRoute from './routes/UserRoute.js'
 
 import cors from 'cors'
 
@@ -26,6 +26,7 @@ res.setHeader("Access-Control-Max-Age", "1800");
 res.setHeader("Access-Control-Allow-Headers", "content-type");
 res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
  });
- 
+
+ app.use('/api/v1/auth', userRoute)
  
 export default app
