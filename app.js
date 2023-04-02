@@ -20,7 +20,7 @@ app.use(bodyParser.json({limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({limit: '30mb', extended: true }))
 
 app.get("/", (req, res) => {
-   res.send("Route is working! YaY!");
+   res.send("Route is working!");
    res.setHeader("Access-Control-Allow-Origin", "*")
 res.setHeader("Access-Control-Allow-Credentials", "true");
 res.setHeader("Access-Control-Max-Age", "1800");
