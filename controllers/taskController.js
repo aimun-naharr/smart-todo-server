@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import Task from "../models/TaskModel.js";
-// import User from "../models/user.js";
+
 
 export const getTasksById= async (req, res) => {
         try {
@@ -36,3 +36,13 @@ export const updateTask = async (req, res) => {
         }
 };
 
+export const deleteTask= async (req, res) => {
+        const { id: _id } = req.params;
+        if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).json({ message: "No task with that id" });
+        try {
+                const response = await Task.findByIdAndRemove(_id);
+                res.status(200).send(response);
+        } catch (error) {
+                console.log(error);
+        }
+};
