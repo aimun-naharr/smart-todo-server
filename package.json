@@ -1,6 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
+  "build": "npm run build",
   "description": "",
   "type": "module",
   "main": "index.js",
