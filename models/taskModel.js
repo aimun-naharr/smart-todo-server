@@ -18,7 +18,7 @@ const taskSchema = mongoose.Schema({
 	},
 	dueDate: {
 		type: Date,
-		default: new Date(),
+		required: true
 	},
 } , { timeStamps: true });
 const Task = mongoose.model("Task", taskSchema);
